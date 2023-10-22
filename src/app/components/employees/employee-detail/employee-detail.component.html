@@ -1,0 +1,37 @@
+<div class="detail">
+  <h1 mat-dialog-title>Employee Details</h1>
+
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-label><b>Lastname:</b></mat-label>
+      <p> &nbsp;{{ data.lastName }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Firstname:</b></mat-label>
+      <p>&nbsp; {{ data.firstName }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Gender:</b></mat-label>
+      <p>&nbsp; {{ data.gender }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Email:</b></mat-label>
+      <p>&nbsp; {{ data.email }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Birthdate:</b></mat-label>
+      <p>&nbsp; {{ data.birthDate | date:'short' }}</p> <!-- Formatierung des Datums -->
+    </div>
+    <div class="row">
+      <mat-label><b>Phone:</b></mat-label>
+      <p>&nbsp; {{ data.phone }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Departement:</b></mat-label>
+      <p>&nbsp; {{ data.departement }}</p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="'close'" color="warn">Close</button>
+  </div>
+</div>

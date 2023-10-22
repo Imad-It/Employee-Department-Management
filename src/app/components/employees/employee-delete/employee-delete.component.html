@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Employee</h1>
+<div mat-dialog-content>
+  Would you like to delete Employee <span style="color: red;">{{data.lastName}}</span> ?
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="primary" (click)="deleteEmployee(data.id)">Yes</button>
+  <button mat-raised-button mat-dialog-close cdkFocusInitial color="warn">No</button>
+</div>

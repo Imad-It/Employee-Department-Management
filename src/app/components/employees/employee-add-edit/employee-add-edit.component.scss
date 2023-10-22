@@ -1,0 +1,44 @@
+.row {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.mat-radio-button {
+  margin: 10px;
+}
+
+button {
+  flex: 1;
+}
+
+
+
+
+
+//####
+// .row {
+//   display: flex;
+//   gap: 10px;
+//   padding: 5px 0;
+
+//   label {
+//     font-weight: 500;
+//   }
+
+//   mat-radio-button {
+//     margin: 0 10px;
+//   }
+
+//   mat-form-field {
+//     width: 100%;
+
+//     .date-color {
+//       color: black;
+//     }
+//   }
+
+//   button {
+//     flex: 1;
+//   }
+// }

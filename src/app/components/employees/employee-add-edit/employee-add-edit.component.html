@@ -1,0 +1,65 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+  <h1 mat-dialog-title>{{data? 'Update ':'Add '}} Employee
+  </h1>
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Firstname</mat-label>
+        <input matInput type="text" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Lastname</mat-label>
+        <input matInput type="text" formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <label><b>Gender: </b></label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="female">Male</mat-radio-button>
+        <mat-radio-button value="male">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" (click)="picker.open()">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]=" picker" formControlName="birthDate" [disabled]="true" style="color: black;">
+        <!-- <mat-hint *ngIf="contactForm.controls['birthDate'].errors">required
+          <div *ngIf="contactForm.controls['birthDate'].errors"></div>
+        </mat-hint> -->
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" formControlName="phone">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="flex:1;">
+        <mat-label>Departement</mat-label>
+        <mat-select formControlName="departement">
+          <mat-option *ngFor="let departement of departementsList" [value]="departement">
+            {{departement}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div mat-dialog-actions class="row">
+    <button mat-raised-button color="primary" [disabled]="employeeForm.invalid" type="submit">
+      {{data? 'Update ':'Add'}}
+    </button>
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>
