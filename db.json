@@ -1,64 +1,254 @@
 {
   "employees": [
     {
-      "firstName": "Sheldon",
-      "lastName": "Quigley",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "gender": "female",
+      "email": "asmith@example.com",
+      "birthDate": "1985-05-15T12:00:00.000Z",
+      "phone": "+1234567890",
+      "departement": "Frontend Development",
+      "id": 1
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Johnson",
       "gender": "male",
-      "email": "hbingley1@plala.or.jp",
-      "birthDate": "2003-08-02T22:00:00.000Z",
-      "phone": "+78131177139",
-      "departement": "Services",
+      "email": "bjohnson@example.com",
+      "birthDate": "1990-07-20T15:00:00.000Z",
+      "phone": "+9876543210",
+      "departement": "Backend Development",
       "id": 2
     },
     {
-      "firstName": "Terrill",
-      "lastName": "Hills",
-      "gender": "male",
-      "email": "rshawe20@51.la",
-      "birthDate": "1992-12-29T23:00:00.000Z",
-      "phone": "+637392927942",
-      "departement": "Marketing",
+      "firstName": "Eva",
+      "lastName": "Brown",
+      "gender": "female",
+      "email": "ebrown@example.com",
+      "birthDate": "1988-03-10T10:30:00.000Z",
+      "phone": "+4445556666",
+      "departement": "Design",
       "id": 3
     },
     {
-      "firstName": "Miles",
-      "lastName": "Cummerata",
+      "firstName": "David",
+      "lastName": "Lee",
       "gender": "male",
-      "email": "yraigatt3@nature.com",
-      "birthDate": "1969-01-15T23:00:00.000Z",
-      "phone": "+864611454186",
-      "departement": "Business Development",
+      "email": "dlee@example.com",
+      "birthDate": "1995-11-05T09:15:00.000Z",
+      "phone": "+7778889999",
+      "departement": "Quality Assurance",
       "id": 4
     },
     {
-      "firstName": "Mavis",
-      "lastName": "Schultz",
-      "gender": "male",
-      "email": "kmeus4@upenn.edu",
-      "birthDate": "1968-11-02T23:00:00.000Z",
-      "phone": "+3722857711911",
-      "departement": "Support",
+      "firstName": "Sophia",
+      "lastName": "Johnson",
+      "gender": "female",
+      "email": "sjohnson@example.com",
+      "birthDate": "1987-09-25T14:45:00.000Z",
+      "phone": "+1112223333",
+      "departement": "Sales and Marketing",
       "id": 5
     },
     {
-      "firstName": "Alison",
-      "lastName": "Reichert",
-      "gender": "female",
-      "email": "jtrelevene5@nhs.uk",
-      "birthDate": "1969-07-20T23:00:00.000Z",
-      "phone": "+3515277353642",
-      "departement": "Accounting",
+      "firstName": "Michael",
+      "lastName": "Davis",
+      "gender": "male",
+      "email": "mdavis@example.com",
+      "birthDate": "1993-04-30T11:20:00.000Z",
+      "phone": "+5554443333",
+      "departement": "Sales and Marketing",
       "id": 6
     },
     {
-      "firstName": "Oleta",
-      "lastName": "Abbott",
+      "firstName": "Olivia",
+      "lastName": "Martinez",
       "gender": "female",
-      "email": "dpettegre6@columbia.edu",
-      "birthDate": "1982-02-20T23:00:00.000Z",
-      "phone": "+62640802711",
-      "departement": "Product Management",
+      "email": "omartinez@example.com",
+      "birthDate": "1991-01-01T08:00:00.000Z",
+      "phone": "+9998887777",
+      "departement": "Support",
       "id": 7
+    },
+    {
+      "firstName": "James",
+      "lastName": "Garcia",
+      "gender": "male",
+      "email": "jgarcia@example.com",
+      "birthDate": "1994-06-15T13:30:00.000Z",
+      "phone": "+3332221111",
+      "departement": "Project Management",
+      "id": 8
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Anderson",
+      "gender": "female",
+      "email": "manderson@example.com",
+      "birthDate": "1986-08-12T10:00:00.000Z",
+      "phone": "+7779991111",
+      "departement": "Human Resources",
+      "id": 9
+    },
+    {
+      "firstName": "Daniel",
+      "lastName": "Wilson",
+      "gender": "male",
+      "email": "dwilson@example.com",
+      "birthDate": "1989-02-18T15:45:00.000Z",
+      "phone": "+2223334444",
+      "departement": "Frontend Development",
+      "id": 10
+    },
+    {
+      "firstName": "Emma",
+      "lastName": "Moore",
+      "gender": "female",
+      "email": "emoore@example.com",
+      "birthDate": "1992-07-22T12:15:00.000Z",
+      "phone": "+8887776666",
+      "departement": "Backend Development",
+      "id": 11
+    },
+    {
+      "firstName": "William",
+      "lastName": "Parker",
+      "gender": "male",
+      "email": "wparker@example.com",
+      "birthDate": "1996-03-05T11:30:00.000Z",
+      "phone": "+5556667777",
+      "departement": "Design",
+      "id": 12
+    },
+    {
+      "firstName": "Ava",
+      "lastName": "Thompson",
+      "gender": "female",
+      "email": "athompson@example.com",
+      "birthDate": "1984-09-10T10:10:00.000Z",
+      "phone": "+3332221111",
+      "departement": "Quality Assurance",
+      "id": 13
+    },
+    {
+      "firstName": "Liam",
+      "lastName": "Hall",
+      "gender": "male",
+      "email": "lhall@example.com",
+      "birthDate": "1990-11-27T13:45:00.000Z",
+      "phone": "+6667778888",
+      "departement": "Sales and Marketing",
+      "id": 14
+    },
+    {
+      "firstName": "Sophie",
+      "lastName": "Evans",
+      "gender": "female",
+      "email": "sevans@example.com",
+      "birthDate": "1988-06-05T09:20:00.000Z",
+      "phone": "+4443332222",
+      "departement": "Support",
+      "id": 15
+    },
+    {
+      "firstName": "Noah",
+      "lastName": "Collins",
+      "gender": "male",
+      "email": "ncollins@example.com",
+      "birthDate": "1993-02-15T14:15:00.000Z",
+      "phone": "+7776665555",
+      "departement": "Project Management",
+      "id": 16
+    },
+    {
+      "firstName": "Charlotte",
+      "lastName": "Lewis",
+      "gender": "female",
+      "email": "clewis@example.com",
+      "birthDate": "1991-07-18T12:30:00.000Z",
+      "phone": "+8887776666",
+      "departement": "Human Resources",
+      "id": 17
+    },
+    {
+      "firstName": "Logan",
+      "lastName": "Baker",
+      "gender": "male",
+      "email": "lbaker@example.com",
+      "birthDate": "1995-05-02T10:00:00.000Z",
+      "phone": "+5554443333",
+      "departement": "Frontend Development",
+      "id": 18
+    },
+    {
+      "firstName": "Grace",
+      "lastName": "White",
+      "gender": "female",
+      "email": "gwhite@example.com",
+      "birthDate": "1987-12-22T15:45:00.000Z",
+      "phone": "+3332221111",
+      "departement": "Backend Development",
+      "id": 19
+    },
+    {
+      "firstName": "Jacob",
+      "lastName": "Stewart",
+      "gender": "male",
+      "email": "jstewart@example.com",
+      "birthDate": "1994-04-08T14:10:00.000Z",
+      "phone": "+2223334444",
+      "departement": "Quality Assurance",
+      "id": 20
+    }
+  ],
+  "departements": [
+    {
+      "id": 1,
+      "name": "Frontend Development",
+      "manager": "John Smith",
+      "description": "The Frontend Development department is responsible for creating the user interface and user experience of our software applications."
+    },
+    {
+      "id": 2,
+      "name": "Backend Development",
+      "manager": "Sarah Johnson",
+      "description": "The Backend Development department is responsible for building and maintaining the server-side logic and databases that power our software applications."
+    },
+    {
+      "id": 3,
+      "name": "Design",
+      "manager": "Julia Schneider",
+      "description": "The design team takes care of user experience and visual design."
+    },
+    {
+      "id": 4,
+      "name": "Quality Assurance",
+      "manager": "Maria Mayer",
+      "description": "The QA department tests and verifies software quality."
+    },
+    {
+      "id": 5,
+      "name": "Sales and Marketing",
+      "manager": "Michael Weber",
+      "description": "The sales and marketing department promotes our software products."
+    },
+    {
+      "id": 6,
+      "name": "Support",
+      "manager": "Laura Fischer",
+      "description": "The support department assists customers with issues and questions."
+    },
+    {
+      "id": 7,
+      "name": "Project Management",
+      "manager": "Thomas Hartmann",
+      "description": "Project managers coordinate the development of software projects."
+    },
+    {
+      "id": 8,
+      "name": "Finance",
+      "description": "The finance department manages the budget and accounting.",
+      "manager": "Andreas Müller"
     }
   ]
 }

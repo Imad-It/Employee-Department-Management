@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Employee } from 'src/app/models/employee.model';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EmployeeService } from 'src/app/services/employee/employee.service';
-import { SnackBarService } from 'src/app/services/shared/snack-bar.service';
+import { SnackBarService } from 'src/app/services/shared/snackbar/snack-bar.service';
 
 @Component({
   selector: 'app-employee-delete',

@@ -8,6 +8,9 @@ import { EmployeeAddEditComponent } from '../employee-add-edit/employee-add-edit
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';
+import { SpinnerService } from 'src/app/services/shared/spinner/spinner.service';
+import { delay, tap } from 'rxjs/operators';
+import { SpinnerComponent } from '../../spinner/spinner.component';
 
 
 
@@ -20,7 +23,7 @@ import { EmployeeDetailComponent } from '../employee-detail/employee-detail.comp
 
 export class EmployeeListComponent implements OnInit {
 
-  dataSource = new MatTableDataSource<Employee>();
+  dataSource!: MatTableDataSource<Employee>;
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -35,7 +38,11 @@ export class EmployeeListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public employeeService: EmployeeService, public dialog: MatDialog) { }
+  constructor(public employeeService: EmployeeService,
+    public dialog: MatDialog,
+    public spinnerService: SpinnerService) {
+    this.spinnerService.hide();
+  }
 
   ngOnInit(): void {
     this.refreshEmployeeList();
@@ -44,16 +51,30 @@ export class EmployeeListComponent implements OnInit {
     })
   }
   refreshEmployeeList() {
-    this.employeeService.getEmployees().subscribe(res => {
-      this.dataSource.data = res;
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    })
+    const dialogRef = this.dialog.open(SpinnerComponent);
+    this.spinnerService.show();
+    this.employeeService.getEmployees().pipe(delay(600))
+      .subscribe(res => {
+        this.dataSource = new MatTableDataSource<Employee>(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        dialogRef.close();
+        this.spinnerService.hide();
+      })
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openAddForm(): void {
+    const dialogRef = this.dialog.open(EmployeeAddEditComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
   openDetailDialog(employee: Employee): void {
     const dialogRef = this.dialog.open(EmployeeDetailComponent, {

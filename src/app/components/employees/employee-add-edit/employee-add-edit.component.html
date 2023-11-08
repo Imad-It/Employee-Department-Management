@@ -47,8 +47,8 @@
       <mat-form-field appearance="outline" style="flex:1;">
         <mat-label>Departement</mat-label>
         <mat-select formControlName="departement">
-          <mat-option *ngFor="let departement of departementsList" [value]="departement">
-            {{departement}}
+          <mat-option *ngFor="let departement of (departementsList | async)" [value]="departement.name">
+            {{departement.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -58,7 +58,7 @@
 
   <div mat-dialog-actions class="row">
     <button mat-raised-button color="primary" [disabled]="employeeForm.invalid" type="submit">
-      {{data? 'Update ':'Add'}}
+      {{data? 'Update ':'Save'}}
     </button>
     <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
   </div>

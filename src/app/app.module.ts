@@ -12,8 +12,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
-
-
+import { DepartementListComponent } from './components/departements/departement-list/departement-list.component';
+import { DepartementAddEditComponent } from './components/departements/departement-add-edit/departement-add-edit.component';
+import { DepartementDetailComponent } from './components/departements/departement-detail/departement-detail.component';
+import { DepartementDeleteComponent } from './components/departements/departement-delete/departement-delete.component';
+import { DepartementEmployeeListComponent } from './components/departements/departement-employee-list/departement-employee-list.component';
+import { ProjectListComponent } from './components/projects/project-list/project-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { CardComponent } from './components/dashboard/card/card.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -23,7 +31,17 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     EmployeeAddEditComponent,
     EmployeeDeleteComponent,
     EmployeeDetailComponent,
-    SidenavComponent
+    SidenavComponent,
+    DepartementListComponent,
+    DepartementAddEditComponent,
+    DepartementDetailComponent,
+    DepartementDeleteComponent,
+    DepartementEmployeeListComponent,
+    ProjectListComponent,
+    DashboardComponent,
+    CardComponent,
+    SpinnerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

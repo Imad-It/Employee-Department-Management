@@ -16,6 +16,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -36,7 +39,9 @@ import { MatListModule } from '@angular/material/list';
     MatNativeDateModule,
     MatSelectModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

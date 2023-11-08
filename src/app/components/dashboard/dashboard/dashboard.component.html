@@ -1,0 +1,7 @@
+<div class="cards-container">
+  <div *ngFor="let item of (departements$|async)">
+    <div class="card">
+      <app-card [departement]="item"></app-card>
+    </div>
+  </div>
+</div>

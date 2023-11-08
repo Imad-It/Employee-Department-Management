@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Employees of Department <span style="color: green;">{{departement}}</span>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Id</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Firstname Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Firstname</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+
+        <!-- Lastname Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Lastname</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Email</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Phone Column -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Telefon Nr.</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+
+
+    <mat-card-actions align="end">
+      <button mat-raised-button mat-dialog-close color="warn" type="button">Close</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+</div>

@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  url: string = "http://localhost:3000/employees";
+  url: string = `http://localhost:3000/employees`;
+
   employeeListUpdated: EventEmitter<void> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,9 @@ export class EmployeeService {
 
   deleteEmployee(id: number) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  getEmployeesByDepartement(departement: string) {
+    return this.http.get<Employee[]>(`${this.url}?departement=${departement}`)
   }
 }

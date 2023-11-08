@@ -1,5 +1,5 @@
 <div class="detail">
-  <h1 mat-dialog-title>Employee Details</h1>
+  <h1 mat-dialog-title>Employee Detail</h1>
 
   <div mat-dialog-content>
     <div class="row">
@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <mat-label><b>Birthdate:</b></mat-label>
-      <p>&nbsp; {{ data.birthDate | date:'short' }}</p> <!-- Formatierung des Datums -->
+      <p>&nbsp; {{ data.birthDate | date:'dd.MM.yyyy' }}</p> <!-- Formatierung des Datums -->
     </div>
     <div class="row">
       <mat-label><b>Phone:</b></mat-label>

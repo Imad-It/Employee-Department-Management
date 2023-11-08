@@ -1,0 +1,20 @@
+.detail {
+  width: 400px;
+
+  .row {
+    display: flex;
+
+    mat-label {
+      width: 100px;
+    }
+
+    p {
+      flex: 1
+    }
+  }
+
+  button.mat-raised-button {
+    // margin-left: auto;
+    width: 100%;
+  }
+}

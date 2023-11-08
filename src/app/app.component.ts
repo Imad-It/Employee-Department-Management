@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from './services/employee/employee.service';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EmployeeAddEditComponent } from './components/employees/employee-add-edit/employee-add-edit.component';
+import { Observable } from 'rxjs';
+import { SpinnerService } from './services/shared/spinner/spinner.service';
 
 
 @Component({
@@ -10,17 +12,17 @@ import { EmployeeAddEditComponent } from './components/employees/employee-add-ed
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  constructor(private employeeService: EmployeeService, public dialog: MatDialog) { }
+  // isLoading$!: Observable<boolean>;
+  constructor(public dialog: MatDialog, public spinnerService: SpinnerService) { }
   ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe((res) => { console.log(res) })
+    // this.isLoading$ = this.spinnerService.getLoadingStatus();
   }
-  openAddForm(): void {
-    const dialogRef = this.dialog.open(EmployeeAddEditComponent, {
-    });
+  // openAddForm(): void {
+  //   const dialogRef = this.dialog.open(EmployeeAddEditComponent, {
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 }

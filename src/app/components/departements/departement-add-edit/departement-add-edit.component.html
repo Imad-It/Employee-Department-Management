@@ -1,0 +1,30 @@
+<form [formGroup]="departementForm" (ngSubmit)=" onFormSubmit()">
+  <h2 mat-dialog-title>{{data? 'Update':'Add'}} Departement</h2>
+  <mat-dialog-content>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Manager</mat-label>
+        <input matInput type="text" formControlName="manager">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-raised-button color="primary" [disabled]="departementForm.invalid"
+      type="submit">{{data?'Update':'Save'}}</button>
+    <button mat-raised-button mat-dialog-close color="warn" type="button">Cancel</button>
+  </mat-dialog-actions>
+
+</form>

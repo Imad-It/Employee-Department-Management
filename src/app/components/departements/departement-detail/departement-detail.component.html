@@ -1,0 +1,21 @@
+<div class="detail">
+  <h1 mat-dialog-title>Employee Detail</h1>
+
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-label><b>Name:</b></mat-label>
+      <p> &nbsp; {{ data.name }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Manager:</b></mat-label>
+      <p>&nbsp; {{ data.manager }}</p>
+    </div>
+    <div class="row">
+      <mat-label><b>Description:</b></mat-label>
+      <p>&nbsp; {{ data.description }}</p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="'close'" color="warn">Close</button>
+  </div>
+</div>

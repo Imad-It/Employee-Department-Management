@@ -1,0 +1,14 @@
+form {}
+
+.row {
+  display: flex;
+
+  mat-form-field {
+    width: 450px;
+  }
+
+}
+
+button {
+  flex: 1
+}

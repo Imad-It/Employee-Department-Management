@@ -1,8 +1,12 @@
-import { SnackBarService } from './../../../services/shared/snack-bar.service';
+import { SnackBarService } from '../../../services/shared/snackbar/snack-bar.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Departement } from 'src/app/models/departement.model';
 import { Employee } from 'src/app/models/employee.model';
+import { DepartementService } from 'src/app/services/departement/departement.service';
 import { EmployeeService } from 'src/app/services/employee/employee.service';
 @Component({
   selector: 'app-employee-add-edit',
@@ -11,10 +15,11 @@ import { EmployeeService } from 'src/app/services/employee/employee.service';
 })
 export class EmployeeAddEditComponent implements OnInit {
   employeeForm!: FormGroup;
-  departementsList: string[] = ['Support', 'Marketing', 'Services', 'Human Resources'];
+  departementsList!: Observable<Departement[]>;
 
   constructor(
     private employeeService: EmployeeService,
+    private departementService: DepartementService,
     private snackBarService: SnackBarService,
     public dialogRef: MatDialogRef<EmployeeAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Employee,
@@ -31,7 +36,7 @@ export class EmployeeAddEditComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    // this.departementsList = ['Support', 'Marketing', 'Services', 'Human Resources'];
+    this.departementsList = this.departementService.getdepartements();
     this.employeeForm.patchValue(this.data);
   }
 
@@ -39,11 +44,12 @@ export class EmployeeAddEditComponent implements OnInit {
     if (this.employeeForm.valid) {
       console.log('employeeForm' + this.employeeForm.value.lastName);
       if (this.data) {
-        this.employeeService.updateEmployee(this.data.id, this.employeeForm.value).subscribe(() => {
-          this.employeeService.employeeListUpdated.emit();
-          this.dialogRef.close();
-          this.snackBarService.openSnackBar('Employee updated !!!', 'ok');
-        })
+        this.employeeService.updateEmployee(this.data.id, this.employeeForm.value)
+          .subscribe(() => {
+            this.employeeService.employeeListUpdated.emit();
+            this.dialogRef.close();
+            this.snackBarService.openSnackBar('Employee updated !!!', 'ok');
+          })
       } else {
         this.employeeService.addEmployee(this.employeeForm.value)
           .subscribe(() => {
