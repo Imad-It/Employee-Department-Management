@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Employee } from '../../models/employee.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,10 @@ export class EmployeeService {
 
   getEmployeesByDepartement(departement: string) {
     return this.http.get<Employee[]>(`${this.url}?departement=${departement}`)
+  }
+
+  public getEmployeeNumberInDepartment(departement: string): Observable<number> {
+    return this.getEmployeesByDepartement(departement)
+      .pipe(map(res => res.length));
   }
 }

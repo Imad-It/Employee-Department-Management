@@ -1,4 +1,3 @@
-import { Departement } from 'src/app/models/departement.model';
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -19,12 +18,8 @@ export class DepartementEmployeeListComponent implements OnInit {
     'id',
     'firstName',
     'lastName',
-    // 'gender',
     'email',
-    // 'birthDate',
     'phone',
-    // 'departement',
-
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

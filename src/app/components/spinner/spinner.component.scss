@@ -5,12 +5,12 @@
   flex-direction: column;
 
   .spinner {
-    margin-top: 10px;
-    height: 120px;
-    width: 120px;
+    height: 85px;
+    width: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 
     .lds-spinner {
       color: official;

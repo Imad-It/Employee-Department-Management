@@ -1,9 +1,9 @@
 import { Departement } from '../../../models/departement.model';
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { delay } from 'rxjs/operators';
 
 import { DepartementService } from 'src/app/services/departement/departement.service';
@@ -13,7 +13,6 @@ import { DepartementDetailComponent } from '../departement-detail/departement-de
 import { DepartementDeleteComponent } from '../departement-delete/departement-delete.component';
 import { DepartementEmployeeListComponent } from '../departement-employee-list/departement-employee-list.component';
 import { SpinnerService } from 'src/app/services/shared/spinner/spinner.service';
-import { Router } from '@angular/router';
 import { SpinnerComponent } from '../../spinner/spinner.component';
 
 @Component({
@@ -33,7 +32,6 @@ export class DepartementListComponent implements OnInit {
   constructor(private departementService: DepartementService,
     private employeeService: EmployeeService,
     public spinnerService: SpinnerService,
-    private router: Router,
     public dialog: MatDialog,
   ) {
     this.spinnerService.hide();

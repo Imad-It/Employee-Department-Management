@@ -1,9 +1,8 @@
 import { SnackBarService } from '../../../services/shared/snackbar/snack-bar.service';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Departement } from 'src/app/models/departement.model';
 import { Employee } from 'src/app/models/employee.model';
 import { DepartementService } from 'src/app/services/departement/departement.service';

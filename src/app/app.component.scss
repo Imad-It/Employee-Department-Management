@@ -3,17 +3,10 @@
 }
 
 .container {
-  height: 90vh;
+  overflow-y: hidden;
 
   .mat-drawer {
     width: 12%;
   }
 
-  .test {
-    position: fixed;
-    height: 80vh;
-    width: 80vw;
-    z-index: 90;
-    top: 50%
-  }
 }

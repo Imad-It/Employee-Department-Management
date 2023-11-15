@@ -4,16 +4,12 @@
     <mat-icon *ngIf="drawer.opened">close</mat-icon>
   </button>
   <span>Employee</span>
-
 </mat-toolbar>
 <mat-drawer-container class="container">
   <mat-drawer #drawer mode="side" opened>
     <app-sidenav></app-sidenav>
   </mat-drawer>
   <mat-drawer-content>
-
-    <!-- <app-spinner [isLoading]="(spinnerService.getLoadingStatus() | async)"></app-spinner> -->
-
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

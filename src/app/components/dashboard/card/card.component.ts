@@ -1,6 +1,3 @@
-import { Observable } from 'rxjs';
-import { count } from 'rxjs/operators';
-import { EmployeeService } from './../../../services/employee/employee.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,13 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() departement!: string;
-  counter$!: Observable<number>;
-  constructor(private employeeService: EmployeeService) { }
+  @Input() departement!: any;
 
-  ngOnInit(): void {
-    this.counter$ = this.employeeService.getEmployeesByDepartement(this.departement)
-      .pipe(count());
-  }
+  constructor() { }
+
+  ngOnInit(): void { }
+
 
 }

@@ -22,6 +22,12 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
 import { CardComponent } from './components/dashboard/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
+import { CardsContainerComponent } from './components/dashboard/cards-container/cards-container.component';
+import { PieChartComponent } from './components/dashboard/pie-chart/pie-chart.component';
+
+
 
 
 @NgModule({
@@ -41,7 +47,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     DashboardComponent,
     CardComponent,
     SpinnerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BarChartComponent,
+    CardsContainerComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

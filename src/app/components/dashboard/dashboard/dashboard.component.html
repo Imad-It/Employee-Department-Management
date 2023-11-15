@@ -1,7 +1,5 @@
-<div class="cards-container">
-  <div *ngFor="let item of (departements$|async)">
-    <div class="card">
-      <app-card [departement]="item"></app-card>
-    </div>
-  </div>
-</div>
+<mat-tab-group>
+  <mat-tab label="Cards"> <app-cards-container></app-cards-container> </mat-tab>
+  <mat-tab label="Bar-Chart"> <app-bar-chart></app-bar-chart> </mat-tab>
+  <mat-tab label="Pie-Chart"> <app-pie-chart></app-pie-chart></mat-tab>
+</mat-tab-group>

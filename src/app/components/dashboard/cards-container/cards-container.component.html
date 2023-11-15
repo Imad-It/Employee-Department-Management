@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Cards</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="cards-container">
+      <div *ngFor="let item of (deptEmployeeStates$ | async)">
+        <div class="card">
+          <app-card [departement]="item"></app-card>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

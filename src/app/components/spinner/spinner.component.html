@@ -1,8 +1,7 @@
 <div *ngIf="spinnerService.getLoadingStatus() | async" class="container">
-  <h3 mat-dialog-title>Please Wait, Data is Being Retrieved...</h3>
+  <h3 mat-dialog-title>Retrieving Data, Please Wait...</h3>
   <div mat-dialog-content>
     <div class="spinner">
-      <!-- <mat-spinner></mat-spinner> -->
       <div class="lds-spinner">
         <div></div>
         <div></div>

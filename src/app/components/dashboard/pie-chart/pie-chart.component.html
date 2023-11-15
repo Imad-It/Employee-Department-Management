@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header class="custom-card-header">
+    <mat-card-title>
+      <h1>Pie Chart</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ngx-charts-pie-grid [results]="deptEmployeeStates$ | async" [view]="view" [scheme]="colorScheme"
+      (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+    </ngx-charts-pie-grid>
+  </mat-card-content>
+</mat-card>

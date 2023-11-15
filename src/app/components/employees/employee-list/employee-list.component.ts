@@ -9,9 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';
 import { SpinnerService } from 'src/app/services/shared/spinner/spinner.service';
-import { delay, tap } from 'rxjs/operators';
+import { delay } from 'rxjs/operators';
 import { SpinnerComponent } from '../../spinner/spinner.component';
-
 
 
 @Component({
@@ -28,9 +27,7 @@ export class EmployeeListComponent implements OnInit {
     'id',
     'firstName',
     'lastName',
-    // 'gender',
     'email',
-    // 'birthDate',
     'phone',
     'departement',
     'action'

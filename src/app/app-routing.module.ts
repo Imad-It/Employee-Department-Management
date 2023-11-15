@@ -7,6 +7,7 @@ import { DepartementListComponent } from './components/departements/departement-
 import { ProjectListComponent } from './components/projects/project-list/project-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'employees', component: EmployeeListComponent },
   { path: 'departements', component: DepartementListComponent },
   { path: 'projects', component: ProjectListComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'dashboard', component: DashboardComponent
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
