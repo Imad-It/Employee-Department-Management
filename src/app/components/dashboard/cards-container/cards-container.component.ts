@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DeptEmployeeState } from 'src/app/models/dept-employee-state.model';
+import { DepartementSummary } from 'src/app/models/departementSummary.model';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 
@@ -11,7 +11,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 })
 export class CardsContainerComponent implements OnInit {
 
-  deptEmployeeStates$!: Observable<DeptEmployeeState[]>;
+  deptEmployeeStates$!: Observable<DepartementSummary[]>;
 
   constructor(private dashboardService: DashboardService) { }
 

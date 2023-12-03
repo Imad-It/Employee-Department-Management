@@ -2,8 +2,8 @@
   cursor: pointer;
 }
 
-.container {
-  overflow-y: hidden;
+.app-container {
+  min-height: 90vh;
 
   .mat-drawer {
     width: 12%;

@@ -7,4 +7,5 @@ export interface Employee {
   birthDate: string;
   phone: string;
   departement: string
+  isManager: boolean
 }

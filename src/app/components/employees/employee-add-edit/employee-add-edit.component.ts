@@ -10,7 +10,7 @@ import { EmployeeService } from 'src/app/services/employee/employee.service';
 @Component({
   selector: 'app-employee-add-edit',
   templateUrl: './employee-add-edit.component.html',
-  styleUrls: ['./employee-add-edit.component.scss']
+  styleUrls: ['./employee-add-edit.component.scss'],
 })
 export class EmployeeAddEditComponent implements OnInit {
   employeeForm!: FormGroup;
@@ -27,15 +27,16 @@ export class EmployeeAddEditComponent implements OnInit {
     this.employeeForm = this.formBuilder.group({
       'firstName': ['', Validators.required],
       'lastName': ['', Validators.required],
-      'gender': ['', Validators.required],
+      'gender': ['male', Validators.required],
       'email': ['', [Validators.required, Validators.email]],
       'birthDate': ['', Validators.required],
       'phone': ['', Validators.required],
-      'departement': ['', Validators.required]
+      'departement': ['', Validators.required],
+      // 'isManager': [false]
     });
   }
   ngOnInit(): void {
-    this.departementsList = this.departementService.getdepartements();
+    this.departementsList = this.departementService.getDepartements();
     this.employeeForm.patchValue(this.data);
   }
 

@@ -13,6 +13,7 @@ import { delay } from 'rxjs/operators';
 import { SpinnerComponent } from '../../spinner/spinner.component';
 
 
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -30,6 +31,7 @@ export class EmployeeListComponent implements OnInit {
     'email',
     'phone',
     'departement',
+    'manager',
     'action'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,8 +50,8 @@ export class EmployeeListComponent implements OnInit {
     })
   }
   refreshEmployeeList() {
-    const dialogRef = this.dialog.open(SpinnerComponent);
     this.spinnerService.show();
+    const dialogRef = this.dialog.open(SpinnerComponent);
     this.employeeService.getEmployees().pipe(delay(600))
       .subscribe(res => {
         this.dataSource = new MatTableDataSource<Employee>(res);
@@ -68,10 +70,6 @@ export class EmployeeListComponent implements OnInit {
   openAddForm(): void {
     const dialogRef = this.dialog.open(EmployeeAddEditComponent, {
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
   openDetailDialog(employee: Employee): void {
     const dialogRef = this.dialog.open(EmployeeDetailComponent, {
@@ -83,17 +81,10 @@ export class EmployeeListComponent implements OnInit {
     const dialogRef = this.dialog.open(EmployeeAddEditComponent, {
       data: employee
     });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   this.animal = result;
-    // });
   }
   openDeleteDialog(employee: Employee) {
     const dialogRef = this.dialog.open(EmployeeDeleteComponent, {
       data: employee
     });
-
-
   }
 }

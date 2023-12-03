@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DeptEmployeeState } from 'src/app/models/dept-employee-state.model';
+import { DepartementSummary } from 'src/app/models/departementSummary.model';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 
@@ -11,11 +11,9 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 })
 export class BarChartComponent implements OnInit {
 
-  deptEmployeeStates$!: Observable<DeptEmployeeState[]>;
+  deptEmployeeStates$!: Observable<DepartementSummary[]>;
 
 
-  productSales: any[] = [];
-  productSalesMulti: any[] = [];
   view: [number, number] = [1000, 370];
 
   // options

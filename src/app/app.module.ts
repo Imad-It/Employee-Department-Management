@@ -26,6 +26,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BarChartComponent } from './components/dashboard/bar-chart/bar-chart.component';
 import { CardsContainerComponent } from './components/dashboard/cards-container/cards-container.component';
 import { PieChartComponent } from './components/dashboard/pie-chart/pie-chart.component';
+import { PieChartGridComponent } from './components/dashboard/pie-chart-grid/pie-chart-grid.component';
 
 
 
@@ -50,7 +51,8 @@ import { PieChartComponent } from './components/dashboard/pie-chart/pie-chart.co
     NotFoundComponent,
     BarChartComponent,
     CardsContainerComponent,
-    PieChartComponent
+    PieChartComponent,
+    PieChartGridComponent
   ],
   imports: [
     BrowserModule,

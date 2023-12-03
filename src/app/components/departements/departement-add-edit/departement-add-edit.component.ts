@@ -21,7 +21,7 @@ export class DepartementAddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Departement) {
     this.departementForm = this.formBuilder.group({
       'name': ['', Validators.required],
-      'manager': ['', Validators.required],
+      // 'manager': ['', Validators.required],
       'description': ['', Validators.required]
     })
   }

@@ -14,17 +14,21 @@ import { DepartementDeleteComponent } from '../departement-delete/departement-de
 import { DepartementEmployeeListComponent } from '../departement-employee-list/departement-employee-list.component';
 import { SpinnerService } from 'src/app/services/shared/spinner/spinner.service';
 import { SpinnerComponent } from '../../spinner/spinner.component';
+import { Employee } from 'src/app/models/employee.model';
+import { DepartementManagerInfo } from 'src/app/models/departementManagerInfo.model';
+import { EmployeeDetailComponent } from '../../employees/employee-detail/employee-detail.component';
+import { ComponentType } from '@angular/cdk/portal';
+import { SnackBarService } from 'src/app/services/shared/snackbar/snack-bar.service';
 
 @Component({
   selector: 'app-departement-list',
   templateUrl: './departement-list.component.html',
-  styleUrls: ['./departement-list.component.scss']
+  styleUrls: ['./departement-list.component.scss'],
 })
 export class DepartementListComponent implements OnInit {
   departements!: Departement[]
+  dataSource !: MatTableDataSource<DepartementManagerInfo>;
   displayedColumns: string[] = ['Id', 'Name', 'Manager', 'action'];
-  dataSource !: MatTableDataSource<Departement>;
-  length!: number;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -32,6 +36,7 @@ export class DepartementListComponent implements OnInit {
   constructor(private departementService: DepartementService,
     private employeeService: EmployeeService,
     public spinnerService: SpinnerService,
+    private snackBarService: SnackBarService,
     public dialog: MatDialog,
   ) {
     this.spinnerService.hide();
@@ -48,16 +53,15 @@ export class DepartementListComponent implements OnInit {
   refreshDepartementList() {
     this.spinnerService.show();
     const dialogRef = this.dialog.open(SpinnerComponent);
-    this.departementService.getdepartements()
+    this.departementService.getDepartementsWithManagers()
       .pipe(delay(600))
-      .subscribe(res => {
-        this.dataSource = new MatTableDataSource<Departement>(res);
+      .subscribe((res) => {
+        this.dataSource = new MatTableDataSource<DepartementManagerInfo>(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         dialogRef.close();
         this.spinnerService.hide();
       })
-
   }
 
   applyFilter(event: Event) {
@@ -74,10 +78,11 @@ export class DepartementListComponent implements OnInit {
     });
   }
 
-  openDetailDialog(departement: Departement) {
-    const dialogRef = this.dialog.open(DepartementDetailComponent, {
-      data: departement
-    })
+  openDetailDialog(selectedItem: DepartementManagerInfo | Employee) {
+    const dialogComponent: ComponentType<DepartementDetailComponent | EmployeeDetailComponent> = ('manager' in selectedItem) ? DepartementDetailComponent : EmployeeDetailComponent;
+    const dialogRef = this.dialog.open(dialogComponent, {
+      data: selectedItem
+    });
   }
 
   openEditForm(departement: Departement) {
@@ -91,13 +96,17 @@ export class DepartementListComponent implements OnInit {
       { data: departement })
   }
 
-  openListDialog(departement: string) {
-    this.employeeService.getEmployeesByDepartement(departement)
-      .subscribe((res) => {
+  openListDialog(departement: Departement) {
+    this.employeeService.getEmployeesByDepartement(departement.name)
+      .subscribe((employees: Employee[]) => {
         const dialogRef = this.dialog.open(DepartementEmployeeListComponent,
-          { data: { list: res, departement: departement } })
+          { data: { list: employees, departement: departement } });
+        dialogRef.afterClosed().subscribe(() => {
+          this.departementService.departementListUpdated.emit();
+          this.snackBarService.openSnackBar('Manager updated!!!', 'ok')
+        }
+        );
       })
   }
-
 
 }

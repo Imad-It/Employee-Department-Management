@@ -3,18 +3,17 @@ import { Observable } from 'rxjs';
 import { DepartementSummary } from 'src/app/models/departementSummary.model';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
-
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  selector: 'app-pie-chart-grid',
+  templateUrl: './pie-chart-grid.component.html',
+  styleUrls: ['./pie-chart-grid.component.scss']
 })
-export class PieChartComponent implements OnInit {
+export class PieChartGridComponent implements OnInit {
+
   deptEmployeeStates$!: Observable<DepartementSummary[]>;
   view: [number, number] = [1000, 370];
 
   // options
-  labels = true;
   showLegend: boolean = true;
   showLabels: boolean = true;
 
